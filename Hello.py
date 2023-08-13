@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     http://www.apache.org/licenses/LICENSE-2.0cls
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,19 +15,15 @@
 import streamlit as st
 from streamlit.logger import get_logger
 
+from decorator.Decorator_Login import login_required
+
 LOGGER = get_logger(__name__)
 
 
+@login_required
 def run():
-    st.set_page_config(
-        page_title="Hello",
-        page_icon="👋",
-    )
-
-    st.write("# Welcome to Streamlit! 👋")
-
+    st.write("# Streamlit 에 오신것을 환영합니다! 👋")
     st.sidebar.success("Select a demo above.")
-
     st.markdown(
         """
         Streamlit is an open-source app framework built specifically for
